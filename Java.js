@@ -55,6 +55,10 @@ function operate() {
         case '*': result = multiply(firstNumber, secondNumber); break;
         case '/': result = divide(firstNumber, secondNumber); break;
     }
+    if (result === null) {
+        // Error already displayed (e.g., divide by zero)
+        return;
+    }
     display.textContent = result.toFixed(2).replace(/\.00$/, '');
     firstNumber = result;
     operator = null;
